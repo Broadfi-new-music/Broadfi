@@ -1,0 +1,116 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 346 100% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 93% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63%;
+
+    --accent: 12 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 346 100% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 346 100% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 346 100% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .gift-button {
+    @apply flex flex-col items-center justify-center bg-stream-dark rounded-full p-2 transition-transform hover:scale-110;
+  }
+  
+  .action-button {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .comment-bubble {
+    @apply bg-stream-overlay rounded-lg p-2 mb-2 animate-fade-in;
+  }
+
+  .like-animation {
+    @apply animate-float-up;
+  }
+
+  .reaction-count {
+    @apply text-sm text-stream-light mt-1;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center;
+  }
+
+  .modal-container {
+    @apply bg-stream-dark rounded-lg p-6 shadow-xl max-w-md w-full mx-4;
+  }
+}
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-black/30 border border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .audio-wave {
+    background: linear-gradient(90deg, var(--tw-gradient-stops));
+    background-size: 200% 100%;
+    animation: wave 2s linear infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 0%;
+    }
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
