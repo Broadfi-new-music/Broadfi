@@ -90,6 +90,15 @@ const Contest = () => {
                 <Trophy className="mr-2 h-5 w-5" />
                 Get BRD Tokens
               </Button>
+              <Button
+                onClick={() => navigate("/create-contest")}
+                variant="outline"
+                size="lg"
+                className="border-white/20 bg-secondary text-white hover:bg-white/10"
+              >
+                <Trophy className="mr-2 h-5 w-5" />
+                  Create Contest
+              </Button>
             </div>
           </div>
         </div>

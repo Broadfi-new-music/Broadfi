@@ -267,7 +267,7 @@ const Index = () => {
       </div>
       {/* Fixed position wallet button on mobile */}
       {/* Mobile navigation tabs at bottom */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-stream-dark border-t border-stream-gray flex justify-around py-2">
+      {/* <div className="md:hidden fixed bottom-0 left-0 right-0 bg-stream-dark border-t border-stream-gray flex justify-around py-2">
         {["Home", "Contest", "Playlists", "Podcast", "More"].map((item) => (
           <div key={item} className="flex flex-col items-center text-xs text-stream-gray">
             <div className="w-6 h-6 mb-1 flex items-center justify-center">
@@ -280,7 +280,7 @@ const Index = () => {
             <span className={item === "Home" ? "text-stream-primary" : ""}>{item}</span>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="flex-1 relative flex flex-col md:flex-row mt-[90px]">
         {/* Video Section - Take full height on mobile, 100% width on desktop */}
         <div className={`${isMobile ? 'h-[calc(100vh-112px)]' : 'h-[calc(100vh-64px)]'} md:w-[70%] relative`}>

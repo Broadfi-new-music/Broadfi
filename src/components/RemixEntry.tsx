@@ -115,7 +115,7 @@ const RemixEntry = ({
                   <DollarSign className="h-3 w-3 mr-1 text-white/50" />
                   <span className="text-sm text-white/70">{tokenPrice.toFixed(4)} BRD</span>
                 </div>
-                <span className={`text-xs ${priceChange >= 0 ? 'text-positive' : 'text-negative'}`}>
+                <span className={`text-xs ${priceChange >= 0 ? 'text-positive text-green-600' : 'text-negative text-red-600'}`}>
                   {priceChange >= 0 ? '+' : ''}{priceChange.toFixed(2)}%
                 </span>
               </div>

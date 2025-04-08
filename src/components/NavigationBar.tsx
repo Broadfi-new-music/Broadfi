@@ -12,13 +12,13 @@ const NavigationBar: React.FC = () => {
   const navItems = [
     { name: 'Home', icon: <Home size={20} />, path: '/' },
     { name: 'Contest', icon: <Compass size={20} />, path: '/contest' },
-    { name: 'Playlists', icon: <PlaySquare size={20} />, path: '/' },
-    { name: 'Dashboard', icon: <PlaySquare size={20} />, path: '/playlists' },
+    { name: 'Playlists', icon: <PlaySquare size={20} />, path: '/playlists' },
+    { name: 'Dashboard', icon: <PlaySquare size={20} />, path: '/dashboard' },
     { name: 'Podcast', icon: <Music size={20} />, path: '/podcast' },
     { name: 'Swap', icon: <Repeat size={20} />, path: '/swap' },
-    { name: 'AMM Pools', icon: <Wallet size={20} />, path: '/amm-pools' },
-    { name: 'Jukebox', icon: <Disc size={20} />, path: '/jukebox' },
-    { name: 'Audio Yield', icon: <LineChart size={20} />, path: '/audio-yield' },
+    { name: 'Livestream', icon: <Wallet size={20} />, path: '/live-stream' },
+    // { name: 'Jukebox', icon: <Disc size={20} />, path: '/jukebox' },
+    // { name: 'Audio Yield', icon: <LineChart size={20} />, path: '/audio-yield' },
     { name: 'Stake', icon: <Wallet size={20} />, path: '/stake' },
   ];
 
@@ -53,14 +53,14 @@ const NavigationBar: React.FC = () => {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={!nav ? 'fixed right-[-100%]' : 'fixed right-0 top-[10px] w-[40%] text-black mt-[68px] h-full bg-blue-500 z-[1000] shadow-md ease-in-out duration-1000 text-white sm:w-[80%] md:w-[40%] lg:hidden'}>
+      <div className={!nav ? 'fixed right-[-100%]' : 'fixed right-0 top-[30px] w-[40%] text-black mt-[68px] h-full bg-blue-500 z-[1000] shadow-md ease-in-out duration-1000 text-white lg:hidden'}>
         <div className='flex flex-row'>
           <div className="flex space-x-6 flex-col">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-stream-gray hover:text-stream-primary flex flex-col items-center text-xs"
+                className="text-white hover:text-stream-primary flex flex-col items-center text-[15px] my-[20px] mx-[30px]"
               >
                 {item.icon}
                 <span>{item.name}</span>

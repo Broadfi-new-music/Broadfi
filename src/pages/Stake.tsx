@@ -1,15 +1,16 @@
 
 import React from 'react';
 import NavigationBar from '@/components/NavigationBar';
+import Header from '@/components/Header';
+import Dashboard from '@/components/Dashboard';
+
 
 const Stake = () => {
   return (
-    <div className="min-h-screen bg-stream-dark">
+    <div className="min-h-screen  flex flex-col bg-stream-dark">
       <NavigationBar />
-      <div className="p-6">
-        <h1 className="text-2xl font-bold text-white">Stake</h1>
-        <p className="text-stream-gray mt-4">Stake page is under construction.</p>
-      </div>
+      <Header />
+      <Dashboard />
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Heart, ThumbsUp, ThumbsDown, DollarSign, Gift } from 'lucide-react';
 import TokenVoteModal from './TokenVoteModal';
