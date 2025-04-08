@@ -53,14 +53,14 @@ const NavigationBar: React.FC = () => {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={!nav ? 'fixed right-[-100%]' : 'fixed right-0 top-[30px] w-[40%] text-black mt-[68px] h-full bg-blue-500 z-[1000] shadow-md ease-in-out duration-1000 text-white lg:hidden'}>
+      <div className={!nav ? 'fixed right-[-100%]' : 'fixed right-0 top-[10px] w-[40%] text-black mt-[68px] h-full bg-blue-500 z-[1000] shadow-md ease-in-out duration-1000 text-white lg:hidden'}>
         <div className='flex flex-row'>
           <div className="flex space-x-6 flex-col">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-white hover:text-stream-primary flex flex-col items-center text-[15px] my-[20px] mx-[30px]"
+                className="text-white hover:text-stream-primary flex flex-col items-center text-[15px] my-[10x  px] mx-[30px]"
               >
                 {item.icon}
                 <span>{item.name}</span>
