@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { Playlist, Track, User } from "../types";
+import { Playlist, Track, User } from "../types/index";
 import { mockPlaylists, mockTracks, mockUser } from "../data/mockData";
 import { toast } from "@/components/ui/use-toast";
 

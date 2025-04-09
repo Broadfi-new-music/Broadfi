@@ -19,3 +19,28 @@ export function formatNumber(num: number): string {
   }
   return num.toString();
 }
+export function formatLivestreamDate(timestamp: number): string {
+  const date = new Date(timestamp);
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  }).format(date);
+}
+
+export function getRelativeTime(timestamp: number): string {
+  const now = Date.now();
+  const diff = now - timestamp;
+  
+  if (diff < 60000) {
+    return 'just now';
+  } else if (diff < 3600000) {
+    return `${Math.floor(diff / 60000)}m ago`;
+  } else if (diff < 86400000) {
+    return `${Math.floor(diff / 3600000)}h ago`;
+  } else {
+    return `${Math.floor(diff / 86400000)}d ago`;
+  }
+}

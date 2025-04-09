@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Playlist } from "@/types";
+import { Playlist } from "@/types/index";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Users, Play } from "lucide-react";
 

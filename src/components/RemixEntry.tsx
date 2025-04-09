@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowUp, ArrowDown, Headphones, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AudioPlayer from "./AudioPlayer";
+import AudioPlayer from "../../AudioPlayer";
 import VotingModal from "./VotingModal";
 import { cn } from "@/lib/utils";
 

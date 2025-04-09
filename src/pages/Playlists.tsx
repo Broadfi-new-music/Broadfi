@@ -23,10 +23,10 @@ const Playlists = () => {
       
       <main className="flex-1 container py-6">
         <section className="mb-8">
-          <div className="rounded-2xl bg-gradient-to-r from-brand/20 via-brand/10 to-background p-6 md:p-8">
+          <div className="rounded-2xl bg-gradient-to-r from-brand/20 via-brand/10 to-background p-6 sm:p-2 md:p-8 lg:p-8">
             <div className="max-w-xl space-y-4">
               <h1 className="text-3xl md:text-4xl font-bold">Discover, Stream & Invest in Music</h1>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-for  eground text-lg">
                 Listen to your favorite music while earning returns through BRD tokens. Stake on trending playlists and grow your portfolio.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -60,7 +60,7 @@ const Playlists = () => {
             </div>
             
             <TabsContent value="all" className="mt-0">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
                 {playlists.map((playlist) => (
                   <PlaylistCard key={playlist.id} playlist={playlist} />
                 ))}
@@ -68,7 +68,7 @@ const Playlists = () => {
             </TabsContent>
             
             <TabsContent value="trending" className="mt-0">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
                 {trendingPlaylists.map((playlist) => (
                   <PlaylistCard key={playlist.id} playlist={playlist} />
                 ))}
@@ -76,7 +76,7 @@ const Playlists = () => {
             </TabsContent>
             
             <TabsContent value="popular" className="mt-0">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
                 {popularPlaylists.map((playlist) => (
                   <PlaylistCard key={playlist.id} playlist={playlist} />
                 ))}

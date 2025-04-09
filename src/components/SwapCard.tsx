@@ -9,7 +9,7 @@ import { ArrowDown } from "lucide-react";
 import TokenSelect from "../components/TokenSelect";
 import ChainSelect from "./ChainSelect";
 import AmountInput from "./AmountInput";
-import SwapDetails from "../components/SwapDetails";
+// import SwapDetails from "../components/SwapDetails";
 import SwapConfirmation from "./SwapConfirmation";
 import {
   BROADFI_TOKEN,
@@ -247,13 +247,13 @@ const SwapCard: React.FC = () => {
           </div>
 
           {/* Swap details */}
-          <SwapDetails
+          {/* <SwapDetails
             exchangeRate={exchangeRate}
             sourceToken={BROADFI_TOKEN.symbol}
             targetToken={selectedTargetToken.symbol}
             gasFee={gasFee}
             gasToken={BROADFI_TOKEN.symbol}
-          />
+          /> */}
 
           {/* Swap button */}
           <Button

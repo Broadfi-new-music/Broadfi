@@ -19,7 +19,7 @@ const Index = () => {
     { id: "scheduled", label: "Scheduled" },
     { id: "categories", label: "Categories" },
     { id: "following", label: "Following" },
-    { id: "schedule", label: "Schedule" },
+    { id: "schedule", label: "Create Schedule" },
   ];
   
   const handleTabChange = (tabId: string) => {

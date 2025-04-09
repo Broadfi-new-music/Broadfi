@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import NavigationBar from '@/components/NavigationBar';
-import AudioPlayer from "@/components/AudioPlayer";
+import AudioPlayer from "@/components/AudioContest";
 import RemixEntry from "@/components/RemixEntry";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -252,6 +252,7 @@ const ContestDetail = () => {
                       artist={contest.themeTrack.artist}
                       coverUrl={contest.themeTrack.coverUrl}
                       audioUrl={contest.themeTrack.audioUrl}
+                      audioSrc={contest.themeTrack.audioSrc}
                     />
                     <Button 
                       className="w-full mt-4 gap-2" 

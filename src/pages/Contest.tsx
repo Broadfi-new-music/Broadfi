@@ -74,12 +74,11 @@ const Contest = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                onClick={() => navigate("/contests")}
                 size="lg"
                 className="bg-primary hover:bg-primary/80"
               >
                 <Music className="mr-2 h-5 w-5" />
-                Explore Contests
+                <a href="#feature">Explore Contests</a>
               </Button>
               <Button
                 onClick={() => navigate("/wallet")}
@@ -104,11 +103,11 @@ const Contest = () => {
         </div>
         
         {/* Featured Contests */}
-        <div className="container mx-auto px-4 py-16">
+        <div id='feature' className="container mx-auto px-4 py-16">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl md:text-3xl font-bold">Featured Contests</h2>
             <Button
-              onClick={() => navigate("/contests")}
+              onClick={() => navigate("/contest")}
               variant="ghost"
               className="text-primary hover:text-primary/80"
             >

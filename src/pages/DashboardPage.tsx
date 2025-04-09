@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { topChartPlaylists, topChartPodcasts, mockContests } from "@/utils/dashboardMockData";
 
+
 // Mock data for the earnings chart
 const earningsData = [
   { date: 'Apr 1', tokens: 320 },

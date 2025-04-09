@@ -58,10 +58,10 @@ const StreamScheduler: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <div className="lg:col-span-3">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold mb-6">Schedule Your Stream</h2>
+            <h2 className="text-2xl font-bold mb-6 text-black">Schedule Your Stream</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="title" className="text-base">
+                <Label htmlFor="title" className="text-black">
                   Stream Title <span className="text-red-500">*</span>
                 </Label>
                 <Input
@@ -75,7 +75,7 @@ const StreamScheduler: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description" className="text-base">
+                <Label htmlFor="description" className="text-black">
                   Description
                 </Label>
                 <Textarea
@@ -88,14 +88,14 @@ const StreamScheduler: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <Label className="text-base">
+                <Label className="text-black">
                   Stream Date & Time <span className="text-red-500">*</span>
                 </Label>
                 <DateTimePicker date={streamDate} setDate={setStreamDate} />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="creator" className="text-base">
+                <Label htmlFor="creator" className="text-black">
                   Creator Name <span className="text-red-500">*</span>
                 </Label>
                 <Input
@@ -109,7 +109,7 @@ const StreamScheduler: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="collaborators" className="text-base">
+                <Label htmlFor="collaborators" className="text-black">
                   Collaborators
                 </Label>
                 <Input
@@ -122,7 +122,7 @@ const StreamScheduler: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <Label className="text-base">Stream Thumbnail</Label>
+                <Label className="text-black">Stream Thumbnail</Label>
                 <ImageUpload
                   onImageChange={handleImageChange}
                   className="min-h-[140px]"

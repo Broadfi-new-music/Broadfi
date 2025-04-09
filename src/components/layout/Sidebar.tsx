@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useUser } from "@/context/UserContext";
 import { cn } from "@/lib/utils";
+import { TonConnectButton } from '@tonconnect/ui-react';
 import { 
   Home, 
   Radio, 
@@ -74,6 +75,9 @@ export default function Sidebar() {
             </Link>
           ))}
         </nav>
+        <div className="flex mt-[20px]">
+          <TonConnectButton />
+        </div>
       </div>
 
       <div className="p-4 border-t border-white/5">

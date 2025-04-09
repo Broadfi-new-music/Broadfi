@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Compass, PlaySquare, Music, Repeat, Disc, LineChart, Wallet } from 'lucide-react';
-import { TonConnectButton } from '@tonconnect/ui-react';
 import { useState } from "react";
 const NavigationBar: React.FC = () => {
   const [nav, setNav] = useState(false);
@@ -13,13 +12,11 @@ const NavigationBar: React.FC = () => {
     { name: 'Home', icon: <Home size={20} />, path: '/' },
     { name: 'Contest', icon: <Compass size={20} />, path: '/contest' },
     { name: 'Playlists', icon: <PlaySquare size={20} />, path: '/playlists' },
-    { name: 'Dashboard', icon: <PlaySquare size={20} />, path: '/dashboard' },
     { name: 'Podcast', icon: <Music size={20} />, path: '/podcast' },
+    { name: 'Livestream', icon: <Wallet size={20} />, path: '/livestream' },
     { name: 'Swap', icon: <Repeat size={20} />, path: '/swap' },
-    { name: 'Livestream', icon: <Wallet size={20} />, path: '/live-stream' },
-    // { name: 'Jukebox', icon: <Disc size={20} />, path: '/jukebox' },
-    // { name: 'Audio Yield', icon: <LineChart size={20} />, path: '/audio-yield' },
     { name: 'Stake', icon: <Wallet size={20} />, path: '/stake' },
+    { name: 'Dashboard', icon: <PlaySquare size={20} />, path: '/dashboard' },
   ];
 
   return (
@@ -47,9 +44,6 @@ const NavigationBar: React.FC = () => {
             </Link>
           ))}
         </div>
-        <div className="flex">
-          <TonConnectButton />
-        </div>
       </div>
       
       {/* Mobile Navigation */}
@@ -60,15 +54,12 @@ const NavigationBar: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-white hover:text-stream-primary flex flex-col items-center text-[15px] my-[10x  px] mx-[30px]"
+                className="text-white hover:text-stream-primary flex flex-col items-center text-[15px] my-[10xpx] mx-[30px]"
               >
                 {item.icon}
                 <span>{item.name}</span>
               </Link>
             ))}
-          </div>
-          <div className="flex">
-            <TonConnectButton />
           </div>
           </div>
       </div>

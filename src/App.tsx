@@ -23,6 +23,8 @@ import PodcastDetail from "./pages/PodcastDetail";
 import UploadPodcast from "./pages/UploadPodcast";
 import Dashboard from "./pages/DashboardPage";
 import Wallet from "./pages/Wallet";
+import CreateContest from "./pages/CreateContest";
+import LivestreamContest from "./pages/LivestreamContest";
 
 const queryClient = new QueryClient();
 
@@ -51,7 +53,9 @@ const App = () => (
           <Route path="/upload" element={<UploadPodcast />} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/wallet" element={<Wallet />} />
+          <Route path="/create-contest" element={<CreateContest />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/livestream" element={<LivestreamContest />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>
