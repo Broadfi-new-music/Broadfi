@@ -144,7 +144,7 @@ const UploadForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto mt-[40px]">
       <h1 className="text-2xl font-bold mb-6">Upload New Podcast</h1>
       
       <form onSubmit={handleSubmit} className="space-y-8">

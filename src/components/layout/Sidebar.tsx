@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   const navigationItems = [
     { name: "Dashboard", icon: Home, path: "/" },
-    { name: "Livestreams", icon: Radio, path: "/live-stream" },
+    { name: "Livestreams", icon: Radio, path: "/livestream" },
     { name: "Playlists", icon: Music, path: "/playlists" },
     { name: "Podcasts", icon: BookAudio, path: "/podcast" },
     { name: "Contests", icon: Trophy, path: "/contest" },

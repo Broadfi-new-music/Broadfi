@@ -1,7 +1,13 @@
 import UploadForm from '@/components/UploadForm';
+import NavigationBar from '@/components/NavigationBar';
 
 const UploadPodcast = () => {
-  return <UploadForm />;
+  return (
+    <>
+      <NavigationBar />
+      <UploadForm />;
+    </>
+  )
 };
 
 export default UploadPodcast;

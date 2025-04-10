@@ -6,6 +6,11 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import PodcastCard, { type Podcast } from '@/components/PodcastCard';
 import { mockPodcasts } from '@/data/mockDataPodcast';
+import { Upload } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+
 
 const Podcast = () => {
   const { viewMode = 'grid', onPlay = () => {} } = useOutletContext<{
@@ -43,7 +48,7 @@ const Podcast = () => {
     <div className="min-h-screen bg-stream-dark">
       <NavigationBar />
       <div>
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6 mt-[20px]">
           <div className="relative flex-grow">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -55,6 +60,12 @@ const Podcast = () => {
           </div>
           
           <div className="flex gap-2">
+             <Link to="/uploads">
+                <Button variant="outline" size="sm" className="hidden md:flex gap-1.5">
+                  <Upload className="h-4 w-4" />
+                  Upload
+                </Button>
+              </Link>
             <button 
               className={`px-4 py-2 text-sm rounded-md ${sortBy === 'popular' ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
               onClick={() => setSortBy('popular')}

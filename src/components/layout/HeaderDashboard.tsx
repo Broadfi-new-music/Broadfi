@@ -36,10 +36,10 @@ export default function Header() {
           </Button>
         )}
 
-        <div className="flex items-center bg-secondary/40 py-1.5 px-3 rounded-md">
+        {/* <div className="flex items-center bg-secondary/40 py-1.5 px-3 rounded-md">
           <Wallet className="text-brand-purple h-4 w-4 mr-2" />
           <span className="text-sm font-medium">{formatNumber(user.tokensEarned)} BRD</span>
-        </div>
+        </div> */}
         <img className="w-[5%] cursor-pointer flex justify-center bg-secondary/40 py-1.5 rounded-md" src="/Images/share.png" alt="" />
 
         <Popover>
@@ -78,13 +78,13 @@ export default function Header() {
           </PopoverContent>
         </Popover>
 
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <img 
             src={user.avatar} 
             alt={user.displayName}
             className="h-9 w-9 rounded-full bg-secondary"
           />
-        </div>
+        </div> */}
       </div>
     </header>
   );

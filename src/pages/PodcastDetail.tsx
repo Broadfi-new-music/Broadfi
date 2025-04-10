@@ -136,8 +136,8 @@ const PodcastDetail = () => {
             <div className="stat-card">
               <p className="text-sm text-muted-foreground">ROI</p>
               <div className="flex items-center text-lg font-bold">
-                <TrendIcon className={`${priceChangeClass} h-5 w-5 mr-1`} />
-                <span className={priceChangeClass}>
+                <TrendIcon className={`${priceChangeClass} h-5 w-5 mr-1 text-green-400`} />
+                <span className={`${priceChangeClass} text-green-400`}>
                   {Math.abs(podcast.roi).toFixed(2)}%
                 </span>
               </div>
@@ -156,7 +156,7 @@ const PodcastDetail = () => {
             </div>
             
             <Button 
-              className="w-full bg-brd hover:bg-brdDark" 
+              className="w-full bg-brd hover:bg-brdDark text-green-400" 
               onClick={() => setIsStakingModalOpen(true)}
             >
               <DollarSign className="h-4 w-4 mr-2" />

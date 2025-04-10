@@ -48,7 +48,7 @@ const App = () => (
           <Route path="/contest/:id" element={<ContestDetail />} />
           <Route path="/podcast/:id" element={<PodcastDetail />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/upload" element={<UploadPodcast />} />
+          <Route path="/uploads" element={<UploadPodcast />} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/create-contest" element={<CreateContest />} />
