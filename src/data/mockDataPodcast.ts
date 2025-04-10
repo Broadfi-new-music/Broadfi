@@ -106,7 +106,7 @@ export const mockPodcasts = [
       id: "4",
       title: "Metaverse Explorers",
       creator: "Virtual Reality",
-      imageUrl: "https://images.unsplash.com/photo-1634154369165-e7310a29002d?q=80&w=500&auto=format&fit=crop",
+      imageUrl: "/Images/pl5.jpg",
       episodes: [
         {
           id: "4-1",
@@ -127,7 +127,7 @@ export const mockPodcasts = [
       id: "5",
       title: "DeFi Deep Dive",
       creator: "Yield Hunter",
-      imageUrl: "https://images.unsplash.com/photo-1629090151753-8328f1ee3335?q=80&w=500&auto=format&fit=crop",
+      imageUrl: "/Images/pl2.jpg",
       episodes: [
         {
           id: "5-1",
@@ -156,7 +156,7 @@ export const mockPodcasts = [
       id: "6",
       title: "Crypto Gaming Guild",
       creator: "Play2Earn Pro",
-      imageUrl: "https://images.unsplash.com/photo-1640272375537-5e9a6f01465e?q=80&w=500&auto=format&fit=crop",
+      imageUrl: "/Images/pl3.jpg",
       episodes: [
         {
           id: "6-1",
@@ -193,7 +193,7 @@ export const mockPodcasts = [
       id: "7",
       title: "Smart Contract Security",
       creator: "White Hat Hacker",
-      imageUrl: "https://images.unsplash.com/photo-1659696034738-1e83afbbfc6d?q=80&w=500&auto=format&fit=crop",
+      imageUrl: "/Images/pl4.jpg",
       episodes: [
         {
           id: "7-1",

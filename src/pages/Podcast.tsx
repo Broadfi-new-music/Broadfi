@@ -8,10 +8,10 @@ import PodcastCard, { type Podcast } from '@/components/PodcastCard';
 import { mockPodcasts } from '@/data/mockDataPodcast';
 
 const Podcast = () => {
-  const { viewMode, onPlay } = useOutletContext<{
+  const { viewMode = 'grid', onPlay = () => {} } = useOutletContext<{
     viewMode: 'grid' | 'list';
     onPlay: (podcast: Podcast, episodeIndex?: number) => void;
-  }>();
+  }>() || {};
   
   const [podcasts, setPodcasts] = useState<Podcast[]>([]);
   const [searchQuery, setSearchQuery] = useState('');

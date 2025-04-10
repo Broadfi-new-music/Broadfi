@@ -11,7 +11,6 @@ import Contest from "./pages/Contest";
 import Playlists from "./pages/Playlists";
 import Podcast from "./pages/Podcast";
 import Swap from "./pages/Swap";
-import LivestreamBattle from "./pages/LivestreamBattle";
 import Jukebox from "./pages/Jukebox";
 import AudioYield from "./pages/AudioYield";
 import Stake from "./pages/Stake";
@@ -24,8 +23,8 @@ import UploadPodcast from "./pages/UploadPodcast";
 import Dashboard from "./pages/DashboardPage";
 import Wallet from "./pages/Wallet";
 import CreateContest from "./pages/CreateContest";
-import LivestreamContest from "./pages/LivestreamContest";
-
+import LivestreamBattle from "./pages/LivestreamBattle";
+import CreateSchedule from "./pages/CreateSchedule"; 
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,7 +41,6 @@ const App = () => (
           <Route path="/playlists" element={<Playlists />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/swap" element={<Swap />} />
-          <Route path="/live-stream" element={<LivestreamBattle />} />
           <Route path="/jukebox" element={<Jukebox />} />
           <Route path="/audio-yield" element={<AudioYield />} />
           <Route path="/stake" element={<Stake />} />
@@ -54,8 +52,9 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/create-contest" element={<CreateContest />} />
+          <Route path="/create-schedule" element={<CreateSchedule />} />
+          <Route path="/livestream" element={<LivestreamBattle/>} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/livestream" element={<LivestreamContest />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>

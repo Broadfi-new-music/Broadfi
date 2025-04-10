@@ -3,6 +3,7 @@ import { Play, User, TrendingUp, TrendingDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Outlet } from 'react-router-dom';
 
 export interface PodcastEpisode {
   id: string;
@@ -144,6 +145,7 @@ const PodcastCard = ({ podcast, layout, onPlay }: PodcastCardProps) => {
           </div>
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };
