@@ -15,7 +15,7 @@ import Jukebox from "./pages/Jukebox";
 import AudioYield from "./pages/AudioYield";
 import Stake from "./pages/Stake";
 import NotFound from "./pages/NotFound";
-import ContestDetail from "./pages/ContestDetail";
+import ContestDetail from "./pages/ContestDetails";
 import PlaylistDetail from "./pages/PlaylistDetail";
 import Upload from "./pages/UploadPlaylist";
 import PodcastDetail from "./pages/PodcastDetail";
