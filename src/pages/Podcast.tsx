@@ -61,7 +61,7 @@ const Podcast = () => {
           
           <div className="flex gap-2">
              <Link to="/uploads">
-                <Button variant="outline" size="sm" className="hidden md:flex gap-1.5">
+                <Button variant="outline" size="sm" className="md:flex gap-1.5">
                   <Upload className="h-4 w-4" />
                   Upload
                 </Button>

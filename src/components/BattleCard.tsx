@@ -365,12 +365,12 @@ const BattleCard = ({
       
       {/* Battle Detail Dialog */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden max-h-[90vh]">
-          <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-col-1 lg:grid-cols-2">
+        <DialogContent className="sm:max-w-[700px] p-0">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-col-1 lg:grid-cols-1">
             {/* Video Section */}
             <div className="relative bg-black">
               <video 
-                className="w-full h-full object-contain"
+                className="w-full h-[400px] object-contain"
                 poster={thumbnailUrl} 
                 autoPlay 
                 muted 
@@ -422,9 +422,9 @@ const BattleCard = ({
                       <p className="text-xs text-muted-foreground">{creator1.followers} followers</p>
                     </div>
                   </div>
-                  <Button size="sm" variant="outline" className="bg-primary/20 border-primary text-primary">
+                  {/* <Button size="sm" variant="outline" className="bg-primary/20 border-primary text-primary">
                     <ThumbsUp className="mr-1 h-4 w-4" /> Support
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>
