@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useUser } from "@/context/UserContext";
 import { cn } from "@/lib/utils";
 import { TonConnectButton } from '@tonconnect/ui-react';
+import { Button } from "@/components/ui/button";
+
 import { 
   Home, 
   Radio, 
@@ -18,7 +20,7 @@ import {
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
-  const { user, isCreatorMode, toggleCreatorMode } = useUser();
+  const { user, isCreatorMode, createLivestream, toggleCreatorMode } = useUser();
 
   const navigationItems = [
     { name: "Dashboard", icon: Home, path: "/" },
@@ -78,6 +80,18 @@ export default function Sidebar() {
         <div className="flex mt-[20px]">
           <TonConnectButton />
         </div>
+         <div className="flex items-center space-x-4">
+            {isCreatorMode && (
+              <Button 
+                onClick={createLivestream}
+                className="flex items-center bg-brand-purple hover:bg-brand-purple/80"
+              >
+                <Radio className="mr-2 h-4 w-4" />
+                Go Live
+              </Button>
+            )}
+            <img className="w-[10%] cursor-pointer flex justify-center bg-secondary/40 py-1.5 rounded-md" src="/Images/share.png" alt="" />
+          </div>
       </div>
 
       <div className="p-4 border-t border-white/5">

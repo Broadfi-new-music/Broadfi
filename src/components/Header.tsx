@@ -41,22 +41,10 @@ const Header = () => {
       
       {/* Mobile Navigation */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-background z-10">
-        <div className="grid grid-cols-4 gap-1 py-2">
-          <Link to="/" className="flex flex-col items-center justify-center py-1 text-xs">
-            <Home className="h-5 w-5 mb-1" />
-            Home
-          </Link>
-          <Link to="/explore" className="flex flex-col items-center justify-center py-1 text-xs">
-            <Music className="h-5 w-5 mb-1" />
-            Explore
-          </Link>
-          <Link to="/upload" className="flex flex-col items-center justify-center py-1 text-xs">
+        <div className="grid grid-cols-1 gap-1 py-2">
+          <Link to="/upload" className="flex flex-col items-end justify-center py-1 pr-2 text-xs">
             <Upload className="h-5 w-5 mb-1" />
             Upload
-          </Link>
-          <Link to="/profile" className="flex flex-col items-center justify-center py-1 text-xs">
-            <User className="h-5 w-5 mb-1" />
-            Profile
           </Link>
         </div>
       </div>

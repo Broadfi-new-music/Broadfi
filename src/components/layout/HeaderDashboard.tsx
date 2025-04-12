@@ -25,7 +25,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
+      {/* <div className="flex items-center space-x-4">
         {isCreatorMode && (
           <Button 
             onClick={createLivestream}
@@ -40,9 +40,8 @@ export default function Header() {
           <Wallet className="text-brand-purple h-4 w-4 mr-2" />
           <span className="text-sm font-medium">{formatNumber(user.tokensEarned)} BRD</span>
         </div> */}
-        <img className="w-[5%] cursor-pointer flex justify-center bg-secondary/40 py-1.5 rounded-md" src="/Images/share.png" alt="" />
 
-        <Popover>
+        {/*<Popover>
           <PopoverTrigger asChild>
             <Button size="icon" variant="outline" className="relative h-9 w-9 rounded-full border-white/10 bg-secondary/40">
               <Bell className="h-4 w-4" />
@@ -84,8 +83,8 @@ export default function Header() {
             alt={user.displayName}
             className="h-9 w-9 rounded-full bg-secondary"
           />
-        </div> */}
-      </div>
+        </div> 
+      </div> */}
     </header>
   );
 }

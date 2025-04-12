@@ -3,8 +3,8 @@ import Header from '../components/HeaderBattle';
 import BattleCard from '../components/BattleCard';
 import LiveBattleStrip from '../components/LiveBattleStrip';
 import ScheduledBattles from '../components/ScheduledBatlle';
-import VotingModal from '../components/VotingModal';
-import GiftingModal from '../components/GiftngModal';
+// import VotingModal from '../components/VotingModal';
+// import GiftingModal from '../components/GiftngModal';
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Trophy, Flame, Gift, Vote } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -257,21 +257,21 @@ const LivestreamBattle = () => {
     creator2: { id: '', name: '', avatar: '' }
   });
   
-  const handleOpenVotingModal = (creator1: any, creator2: any) => {
-    setSelectedCreators({
-      creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
-      creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
-    });
-    setIsVotingModalOpen(true);
-  };
+  // const handleOpenVotingModal = (creator1: any, creator2: any) => {
+  //   setSelectedCreators({
+  //     creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
+  //     creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
+  //   });
+  //   setIsVotingModalOpen(true);
+  // };
   
-  const handleOpenGiftingModal = (creator1: any, creator2: any) => {
-    setSelectedCreators({
-      creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
-      creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
-    });
-    setIsGiftingModalOpen(true);
-  };
+  // const handleOpenGiftingModal = (creator1: any, creator2: any) => {
+  //   setSelectedCreators({
+  //     creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
+  //     creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
+  //   });
+  //   setIsGiftingModalOpen(true);
+  // };
   
   return (
     <div className="min-h-screen bg-background">
@@ -301,7 +301,7 @@ const LivestreamBattle = () => {
               </TabsTrigger>
             </TabsList>
             
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <Button 
                 variant="outline" 
                 size="sm" 
@@ -320,7 +320,7 @@ const LivestreamBattle = () => {
                 <Gift className="h-4 w-4" /> 
                 <span className="hidden sm:inline">Gift</span>
               </Button>
-            </div>
+            </div> */}
           </div>
           
           {/* Trending Tab */}
@@ -363,20 +363,20 @@ const LivestreamBattle = () => {
       </main>
       
       {/* Voting Modal */}
-      <VotingModal 
+      {/* <VotingModal 
         isOpen={isVotingModalOpen} 
         onClose={() => setIsVotingModalOpen(false)} 
         creator1={selectedCreators.creator1} 
         creator2={selectedCreators.creator2}
-      />
+      /> */}
       
       {/* Gifting Modal */}
-      <GiftingModal
+      {/* <GiftingModal
         isOpen={isGiftingModalOpen} 
         onClose={() => setIsGiftingModalOpen(false)} 
         creator1={selectedCreators.creator1} 
         creator2={selectedCreators.creator2}
-      />
+      /> */}
     </div>
   );
 };

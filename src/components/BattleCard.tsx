@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { Heart, MessageSquare, Gift, ThumbsUp } from 'lucide-react';
+import { Heart, MessageSquare, Gift, ThumbsUp, Vote,  Calendar, Clock, Trophy, } from 'lucide-react';
+import VotingModal from '../components/VotingModal';
+import GiftingModal from '../components/GiftngModal';
+import { Button } from "@/components/ui/button";
 import { 
   Dialog, 
   DialogContent, 
@@ -7,7 +10,6 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 
 interface Creator {
   name: string;
@@ -27,7 +29,244 @@ interface BattleProps {
   creator2: Creator;
   description: string;
 }
+const liveBattles = [
+  {
+    id: '1',
+    creator1: { name: 'Alex Dance', avatar: 'https://i.pravatar.cc/150?img=32' },
+    creator2: { name: 'Mia Beats', avatar: 'https://i.pravatar.cc/150?img=44' },
+    viewCount: '3.2K',
+    previewUrl: 'https://images.unsplash.com/photo-1601042879364-f3947d3f9c16'
+  },
+  {
+    id: '2',
+    creator1: { name: 'Jay Smooth', avatar: 'https://i.pravatar.cc/150?img=68' },
+    creator2: { name: 'Emma Flow', avatar: 'https://i.pravatar.cc/150?img=47' },
+    viewCount: '1.8K',
+    previewUrl: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1'
+  },
+  {
+    id: '3',
+    creator1: { name: 'Mike Rythem', avatar: 'https://i.pravatar.cc/150?img=11' },
+    creator2: { name: 'Sara Vibe', avatar: 'https://i.pravatar.cc/150?img=24' },
+    viewCount: '4.5K',
+    previewUrl: 'https://images.unsplash.com/photo-1594434533760-02e0f3b7114b'
+  },
+  {
+    id: '4',
+    creator1: { name: 'Tom Groove', avatar: 'https://i.pravatar.cc/150?img=15' },
+    creator2: { name: 'Lily Twist', avatar: 'https://i.pravatar.cc/150?img=9' },
+    viewCount: '2.1K',
+    previewUrl: 'https://images.unsplash.com/photo-1560807707-8cc77767d783'
+  },
+  {
+    id: '5',
+    creator1: { name: 'Ryan Moves', avatar: 'https://i.pravatar.cc/150?img=3' },
+    creator2: { name: 'Nina Steps', avatar: 'https://i.pravatar.cc/150?img=26' },
+    viewCount: '5.3K',
+    previewUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad'
+  },
+  {
+    id: '6',
+    creator1: { name: 'Kevin Beat', avatar: 'https://i.pravatar.cc/150?img=7' },
+    creator2: { name: 'Zoe Rhythm', avatar: 'https://i.pravatar.cc/150?img=20' },
+    viewCount: '2.7K',
+    previewUrl: 'https://images.unsplash.com/photo-1524673278499-6c3723678fb4'
+  }
+];
 
+const upcomingBattles = [
+  {
+    id: '1',
+    title: 'Dance Battle Championship',
+    date: 'Apr 15, 2025',
+    time: '8:00 PM EST',
+    creator1: {
+      name: 'DanceKing',
+      username: 'danceking',
+      avatar: 'https://i.pravatar.cc/150?img=57'
+    },
+    creator2: {
+      name: 'FlowQueen',
+      username: 'flowqueen',
+      avatar: 'https://i.pravatar.cc/150?img=23'
+    }
+  },
+  {
+    id: '2',
+    title: 'Beat Boxing Showdown',
+    date: 'Apr 18, 2025',
+    time: '7:30 PM EST',
+    creator1: {
+      name: 'BeatMaster',
+      username: 'beatmaster',
+      avatar: 'https://i.pravatar.cc/150?img=13'
+    },
+    creator2: {
+      name: 'RhythmPro',
+      username: 'rhythmpro',
+      avatar: 'https://i.pravatar.cc/150?img=19'
+    }
+  },
+  {
+    id: '3',
+    title: 'Rap Battle Finals',
+    date: 'Apr 20, 2025',
+    time: '9:00 PM EST',
+    creator1: {
+      name: 'LyricKing',
+      username: 'lyricking',
+      avatar: 'https://i.pravatar.cc/150?img=8'
+    },
+    creator2: {
+      name: 'FlowMaster',
+      username: 'flowmaster',
+      avatar: 'https://i.pravatar.cc/150?img=60'
+    }
+  },
+  {
+    id: '4',
+    title: 'Comedy Improv Challenge',
+    date: 'Apr 22, 2025',
+    time: '8:30 PM EST',
+    creator1: {
+      name: 'JokeStar',
+      username: 'jokestar',
+      avatar: 'https://i.pravatar.cc/150?img=30'
+    },
+    creator2: {
+      name: 'LaughMaster',
+      username: 'laughmaster',
+      avatar: 'https://i.pravatar.cc/150?img=41'
+    }
+  }
+];
+
+const featuredBattles = [
+  {
+    id: '1',
+    title: 'Epic Dance Battle: Hip Hop vs Contemporary',
+    thumbnailUrl: '/Images/pl4.jpg',
+    viewCount: '45.2K',
+    isLive: true,
+    creator1: {
+      name: 'Michael Groove',
+      username: 'michgroove',
+      avatar: 'https://i.pravatar.cc/150?img=51',
+      followers: '256K'
+    },
+    creator2: {
+      name: 'Sophie Flow',
+      username: 'sophflow',
+      avatar: 'https://i.pravatar.cc/150?img=44',
+      followers: '189K'
+    },
+    description: 'Watch the ultimate showdown between hip hop and contemporary dance styles! Vote for your favorite using BRD tokens.'
+  },
+  {
+    id: '2',
+    title: 'Beat Boxing Championship Finals',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81',
+    viewCount: '32.7K',
+    isLive: true,
+    creator1: {
+      name: 'DJ Beats',
+      username: 'djbeats',
+      avatar: 'https://i.pravatar.cc/150?img=33',
+      followers: '321K'
+    },
+    creator2: {
+      name: 'Rhythm Master',
+      username: 'rhythmaster',
+      avatar: 'https://i.pravatar.cc/150?img=12',
+      followers: '278K'
+    },
+    description: 'The most anticipated beatboxing battle of the year is happening right now! Two champions, one winner.'
+  },
+  {
+    id: '3',
+    title: 'Freestyle Rap Battle: East vs West',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf',
+    viewCount: '28.4K',
+    isLive: false,
+    scheduledTime: 'Apr 15, 8:00 PM',
+    creator1: {
+      name: 'EastSide MC',
+      username: 'eastsidemc',
+      avatar: 'https://i.pravatar.cc/150?img=62',
+      followers: '156K'
+    },
+    creator2: {
+      name: 'WestCoast Flow',
+      username: 'westcoastflow',
+      avatar: 'https://i.pravatar.cc/150?img=59',
+      followers: '143K'
+    },
+    description: 'East meets West in this epic freestyle rap battle. Don\'t miss the cultural showdown of lyrical masters.'
+  },
+  {
+    id: '4',
+    title: 'Comedy Improv Face-Off',
+    thumbnailUrl: '/Images/pl2.jpg',
+    viewCount: '18.9K',
+    isLive: false,
+    scheduledTime: 'Apr 16, 9:30 PM',
+    creator1: {
+      name: 'Laugh King',
+      username: 'laughking',
+      avatar: 'https://i.pravatar.cc/150?img=53',
+      followers: '98K'
+    },
+    creator2: {
+      name: 'Joke Queen',
+      username: 'jokequeen',
+      avatar: 'https://i.pravatar.cc/150?img=5',
+      followers: '112K'
+    },
+    description: 'Who will make you laugh harder? Join us for a hilarious improv battle between two comedy legends.'
+  },
+  {
+    id: '5',
+    title: 'Vocal Battle: R&B vs Pop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1516223725307-6f76b9ec8742',
+    viewCount: '22.1K',
+    isLive: false,
+    scheduledTime: 'Apr 17, 7:00 PM',
+    creator1: {
+      name: 'Soul Voice',
+      username: 'soulvoice',
+      avatar: 'https://i.pravatar.cc/150?img=27',
+      followers: '187K'
+    },
+    creator2: {
+      name: 'Pop Star',
+      username: 'popstar',
+      avatar: 'https://i.pravatar.cc/150?img=19',
+      followers: '210K'
+    },
+    description: 'Two incredible vocal talents battle it out across R&B and pop genres. Who will win your vote?'
+  },
+  {
+    id: '6',
+    title: 'Street Art Live Challenge',
+    thumbnailUrl: '/Images/pl1.jpg',
+    viewCount: '15.3K',
+    isLive: false,
+    scheduledTime: 'Apr 18, 6:30 PM',
+    creator1: {
+      name: 'Urban Artist',
+      username: 'urbanartist',
+      avatar: 'https://i.pravatar.cc/150?img=15',
+      followers: '76K'
+    },
+    creator2: {
+      name: 'Graffiti Master',
+      username: 'graffitimaster',
+      avatar: 'https://i.pravatar.cc/150?img=17',
+      followers: '82K'
+    },
+    description: 'Watch two street artists create amazing pieces in real-time. Support your favorite with gifts and votes!'
+  }
+];
 const BattleCard = ({
   id,
   title,
@@ -40,7 +279,27 @@ const BattleCard = ({
   description
 }: BattleProps) => {
   const [showDialog, setShowDialog] = useState(false);
+  const [isVotingModalOpen, setIsVotingModalOpen] = useState(false);
+  const [isGiftingModalOpen, setIsGiftingModalOpen] = useState(false);
+   const [selectedCreators, setSelectedCreators] = useState({
+      creator1: { id: '', name: '', avatar: '' },
+      creator2: { id: '', name: '', avatar: '' }
+    });
+  const handleOpenVotingModal = (creator1: any, creator2: any) => {
+    setSelectedCreators({
+      creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
+      creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
+    });
+    setIsVotingModalOpen(true);
+  };
   
+  const handleOpenGiftingModal = (creator1: any, creator2: any) => {
+    setSelectedCreators({
+      creator1: { id: '1', name: creator1.name, avatar: creator1.avatar },
+      creator2: { id: '2', name: creator2.name, avatar: creator2.avatar }
+    });
+    setIsGiftingModalOpen(true);
+  };
   return (
     <div className="relative overflow-hidden rounded-lg bg-secondary hover:bg-secondary/90 transition-all duration-300 hover:scale-[1.01] cursor-pointer">
       <div 
@@ -106,8 +365,8 @@ const BattleCard = ({
       
       {/* Battle Detail Dialog */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden max-h-[90vh]">
-          <div className="grid md:grid-cols-2 h-full">
+        <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden max-h-[90vh]">
+          <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-col-1 lg:grid-cols-2">
             {/* Video Section */}
             <div className="relative bg-black">
               <video 
@@ -127,18 +386,32 @@ const BattleCard = ({
                   <div className="h-2 w-2 bg-destructive rounded-full animate-pulse"></div>
                   <span className="text-xs font-bold text-white">LIVE</span>
                 </div>
+                
               )}
               
               {/* Live reactions section */}
-              <div className="absolute bottom-16 right-4 flex flex-col items-end space-y-2 pointer-events-none">
-                <div className="gift-animation bg-black/40 rounded-full p-1">
-                  <Gift className="h-5 w-5 text-yellow-500" />
-                </div>
-                <div className="gift-animation bg-black/40 rounded-full p-1 animation-delay-300">
-                  <Heart className="h-5 w-5 text-red-500" />
-                </div>
+               <div className="absolute bottom-24 right-4 flex flex-col items-end space-y-2">
+               <div className="flex gap-2 pl-[10px]">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => handleOpenVotingModal(featuredBattles[0].creator1, featuredBattles[0].creator2)}
+                  className="flex items-center gap-1"
+                >
+                  <Vote className="h-4 w-4" /> 
+                  <span className="hidden sm:inline">Vote</span>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => handleOpenGiftingModal(featuredBattles[0].creator1, featuredBattles[0].creator2)}
+                  className="flex items-center gap-1"
+                >
+                  <Gift className="h-4 w-4" /> 
+                  <span className="hidden sm:inline">Gift</span>
+                </Button>
               </div>
-              
+              </div>
               {/* Creator info overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                 <div className="flex justify-between">
@@ -197,17 +470,9 @@ const BattleCard = ({
               </div>
               
               {/* Action Buttons */}
-              <div className="flex p-4 border-b border-border gap-2">
-                <Button className="flex-1" variant="outline">
-                  <Heart className="mr-2 h-4 w-4" /> Like
-                </Button>
-                <Button className="flex-1" variant="outline">
-                  <Gift className="mr-2 h-4 w-4" /> Send Gift
-                </Button>
-                <Button className="flex-1" variant="outline">
-                  <MessageSquare className="mr-2 h-4 w-4" /> Comment
-                </Button>
-              </div>
+              {/* <div className="bottom-16 right-4 flex flex-col items-end space-y-2 pointer-events-none"> */}
+                 
+              {/* </div> */}
               
               {/* Comments */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -237,6 +502,20 @@ const BattleCard = ({
           </div>
         </DialogContent>
       </Dialog>
+      <VotingModal 
+        isOpen={isVotingModalOpen} 
+        onClose={() => setIsVotingModalOpen(false)} 
+        creator1={selectedCreators.creator1} 
+        creator2={selectedCreators.creator2}
+      />
+      
+      {/* Gifting Modal */}
+      <GiftingModal
+        isOpen={isGiftingModalOpen} 
+        onClose={() => setIsGiftingModalOpen(false)} 
+        creator1={selectedCreators.creator1} 
+        creator2={selectedCreators.creator2}
+      />
     </div>
   );
 };
