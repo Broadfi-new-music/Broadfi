@@ -365,12 +365,12 @@ const BattleCard = ({
       
       {/* Battle Detail Dialog */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="sm:max-w-[700px] p-0">
+        <DialogContent className="sm:max-w-[600px] p-0">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-col-1 lg:grid-cols-1">
             {/* Video Section */}
             <div className="relative bg-black">
               <video 
-                className="w-full h-[400px] object-contain"
+                className="w-full h-[250px] object-contain"
                 poster={thumbnailUrl} 
                 autoPlay 
                 muted 
@@ -390,7 +390,7 @@ const BattleCard = ({
               )}
               
               {/* Live reactions section */}
-               <div className="absolute bottom-24 right-4 flex flex-col items-end space-y-2">
+               <div className="absolute bottom-23 right-4 flex flex-col items-end space-y-2">
                <div className="flex gap-2 pl-[10px]">
                 <Button 
                   variant="outline" 

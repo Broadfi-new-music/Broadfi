@@ -300,27 +300,6 @@ const LivestreamBattle = () => {
                 Upcoming
               </TabsTrigger>
             </TabsList>
-            
-            {/* <div className="flex gap-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleOpenVotingModal(featuredBattles[0].creator1, featuredBattles[0].creator2)}
-                className="flex items-center gap-1"
-              >
-                <Vote className="h-4 w-4" /> 
-                <span className="hidden sm:inline">Vote</span>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => handleOpenGiftingModal(featuredBattles[0].creator1, featuredBattles[0].creator2)}
-                className="flex items-center gap-1"
-              >
-                <Gift className="h-4 w-4" /> 
-                <span className="hidden sm:inline">Gift</span>
-              </Button>
-            </div> */}
           </div>
           
           {/* Trending Tab */}
