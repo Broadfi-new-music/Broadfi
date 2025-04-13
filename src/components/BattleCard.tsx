@@ -3,6 +3,7 @@ import { Heart, MessageSquare, Gift, ThumbsUp, Vote,  Calendar, Clock, Trophy, }
 import VotingModal from '../components/VotingModal';
 import GiftingModal from '../components/GiftngModal';
 import { Button } from "@/components/ui/button";
+import CommentSection from './CommentSection';
 import { 
   Dialog, 
   DialogContent, 
@@ -469,10 +470,6 @@ const BattleCard = ({
                 </div>
               </div>
               
-              {/* Action Buttons */}
-              {/* <div className="bottom-16 right-4 flex flex-col items-end space-y-2 pointer-events-none"> */}
-                 
-              {/* </div> */}
               
               {/* Comments */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4">

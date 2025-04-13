@@ -90,7 +90,7 @@ const PodcastCard = ({ podcast, layout, onPlay }: PodcastCardProps) => {
             <div className="text-muted-foreground text-xs">ROI</div>
             <div className="flex items-center gap-1">
               <TrendIcon className={cn("h-3 w-3", priceChangeClass)} />
-              <span className={priceChangeClass}>{Math.abs(podcast.roi).toFixed(2)}%</span>
+              <span className={`text-green-500 ${priceChangeClass}`}>{Math.abs(podcast.roi).toFixed(2)}%</span>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ const PodcastCard = ({ podcast, layout, onPlay }: PodcastCardProps) => {
           <div className="text-muted-foreground text-xs">ROI</div>
           <div className="flex items-center gap-1">
             <TrendIcon className={cn("h-3 w-3", priceChangeClass)} />
-            <span className={priceChangeClass}>{Math.abs(podcast.roi).toFixed(2)}%</span>
+            <span className={`text-green-500 ${priceChangeClass}`}>{Math.abs(podcast.roi).toFixed(2)}%</span>
           </div>
         </div>
       </div>
