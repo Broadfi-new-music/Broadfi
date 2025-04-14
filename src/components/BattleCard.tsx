@@ -371,7 +371,7 @@ const BattleCard = ({
             {/* Video Section */}
             <div className="relative bg-black">
               <video 
-                className="w-full h-[250px] object-contain"
+                className="w-full h-[170px] object-contain"
                 poster={thumbnailUrl} 
                 autoPlay 
                 muted 
@@ -493,6 +493,10 @@ const BattleCard = ({
                     <p className="text-xs font-medium">@fan2022</p>
                     <p className="text-sm">Amazing skills from both creators!</p>
                   </div>
+                </div>
+                <div className='flex'>
+                  <input className='bg-gray-900 rounded-sm flex w-[80%] px-[10px] py-[10px] outline-none' type="text" name="" id="" placeholder='Send a comment' />
+                  <button type='button' className='border text-white px-[20px] py-[5px] rounded-md ml-[20px] cursor-pointer hover:bg-gray-900'>Send</button>
                 </div>
               </div>
             </div>

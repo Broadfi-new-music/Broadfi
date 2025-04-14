@@ -63,18 +63,18 @@ const HeaderBattle = () => {
       
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-background border-r border-border p-4 animate-fade-in">
+        <div className="md:hidden fixed inset-0 z-50 border-r border-border p-4 animate-fade-in">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            {/* <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               BRD Battles
-            </h1>
+            </h1> */}
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </Button>
           </div>
-          <nav className="flex flex-col space-y-4 text-lg">
+          <nav className="flex flex-col space-y-4 text-lg bg-black  px-[10px]">
             <a href="#" className="py-2 border-b border-border">Home</a>
             <a href="#" className="py-2 border-b border-border">Live Now</a>
             <a href="#" className="py-2 border-b border-border">Schedule</a>
